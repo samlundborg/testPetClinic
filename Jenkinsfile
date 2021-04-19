@@ -13,10 +13,14 @@ pipeline {
             }
         }
         stage('First Build') {
-            sh('. spring-petclinic-rest/build.sh')
+            steps {
+                sh('. spring-petclinic-rest/build.sh')
+            }
         }
         stage('Second Build') {
-            sh('. spring-petclinic-angular/build.sh')
+            steps {
+                sh('. spring-petclinic-angular/build.sh')
+            }        
         } 
     }
 }
